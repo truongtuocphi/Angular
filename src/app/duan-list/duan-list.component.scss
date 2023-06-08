@@ -1,0 +1,49 @@
+a {
+    text-decoration: none;
+    padding: 0 !important;
+    background-color: unset;
+}
+
+.table {
+    // margin-bottom: 120px;
+    font-size: 18px;
+    background-color: white;
+    .crop {
+        color: rgb(55, 55, 247);
+        overflow: hidden;
+    }
+
+    tr {
+        th {
+            padding: 15px;
+            background-color: rgb(78, 78, 228);
+            color: white;
+        }
+        td {
+            padding: 5px 20px;
+        }
+    }
+    .modal {
+        background-color: unset !important;
+    }
+}
+
+.box-edit {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    .edit {
+        background-color: rgb(59, 231, 53);
+        color: white;
+        padding: 4px 20px !important;
+        text-align: center;
+        border-radius: 8px;
+    }
+    .delete {
+        background-color: rgb(230, 38, 47);
+        color: white;
+        padding: 4px 20px !important;
+        text-align: center;
+        border-radius: 8px;
+    }
+}

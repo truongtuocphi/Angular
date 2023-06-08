@@ -1,0 +1,47 @@
+a {
+    text-decoration: none;
+}
+
+.table {
+    // margin-bottom: 120px;
+    font-size: 18px;
+    background-color: white;
+    .crop {
+        color: rgb(55, 55, 247);
+        overflow: hidden;
+    }
+
+    tr {
+        th {
+            padding: 15px 0;
+            background-color: rgb(78, 78, 228);
+            color: white;
+            &:first-child {
+                padding: 0 10px;
+            }
+        }
+        td {
+            padding: 10px 0;
+        }
+    }
+}
+
+.box-edit {
+    display: flex;
+    // justify-content: center;
+    gap: 8px;
+    .edit {
+        background-color: rgb(59, 231, 53);
+        color: white;
+        padding: 4px 20px !important;
+        text-align: center;
+        border-radius: 8px;
+    }
+    .delete {
+        background-color: rgb(230, 38, 47);
+        color: white;
+        padding: 4px 20px !important;
+        text-align: center;
+        border-radius: 8px;
+    }
+}

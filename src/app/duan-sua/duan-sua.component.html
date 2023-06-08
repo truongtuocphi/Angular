@@ -1,0 +1,41 @@
+<form #frm="ngForm" class="mt-3">
+    <h5 class="bg-warning p-2">SỬA DỰ ÁN</h5>
+    <p class="mb-3">Tên dự án <input class="form-control" name="tenDuAn" [(ngModel)]="duan.tenDuAn"></p>
+    <p class="mb-3">Ngày Start <input class="form-control" type="date" name="ngayStart" [(ngModel)]="duan.ngayStart"></p>
+    <p class="mb-3">Tiền <input class="form-control" name="tien" [(ngModel)]="duan.tien" type="number"></p>
+    <p class="mb-3">
+        Leader 
+        <select class="form-control" name="leader" [(ngModel)]="duan.leader">
+            <option value="" *ngFor="let nv of listNhanVien" value="{{nv.id}}">
+                {{nv.ho}} {{nv.ten}}
+            </option>
+        </select>
+    </p>
+    <p class="mb-3">
+        Thành viên 
+        <select multiple size="5" class="form-control" name="thanhvien" ngModel>
+            <option *ngFor="let nv of listNhanVien" [value]="nv.id">
+                {{nv.ho}} {{nv.ten}}
+            </option>
+        </select>
+    </p>
+    <p>
+        <button class="btn btn-primary p-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Sửa dự án</button>
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="staticBackdropLabel">Thông báo</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  Bạn có chắc muốn thay đổi chứ?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                  <button type="button" class="btn btn-primary" (click)="suaDuAn()">Sửa</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

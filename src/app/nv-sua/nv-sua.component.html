@@ -1,0 +1,21 @@
+<form class="mt-3" #frm1="ngForm">
+    <h5 class="bg-warning p-2">SỬA NHÂN VIÊN</h5>
+    <p class="mb-3">Họ <input class="form-control" name="ho" [(ngModel)]="dataNV.ho"></p>
+    <p class="mb-3">Tên <input class="form-control" name="ten" [(ngModel)]="dataNV.ten"></p>
+    <p class="mb-3">Ngày sinh <input class="form-control" type="date" name="ngaysinh" [(ngModel)]="dataNV.ngaysinh"></p>
+    <p class="mb-3">
+        Phái 
+        <select class="form-control" name="phai" [(ngModel)]="dataNV.phai">
+            <option [value]="true" [selected]="dataNV.phai === true">Nam</option>
+            <option [value]="false" [selected]="dataNV.phai === false">Nữ</option>
+        </select>
+    </p>
+    <p class="mb-3">
+        Khu vực
+        <select class="form-control" name="khuvuc" [(ngModel)]="dataNV.khuvuc">
+            <option value="Bắc">Bắc</option>
+            <option value="Nam">Nam</option>
+        </select>
+    </p>
+    <p><button class="btn btn-primary p-2" (click)="suaNV()">Sửa nhân viên</button></p>
+</form>

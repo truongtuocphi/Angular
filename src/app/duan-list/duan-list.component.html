@@ -1,0 +1,44 @@
+<table class="table table-bordered border">
+    <caption align="top" class="bg-warning p-2">
+      DANH SÁCH DỰ ÁN
+      <label for="" class="float-end">
+        <input type="text" [(ngModel)]="tukhoa" (keyup)="locDuAn()">
+      </label>
+    </caption>
+    <tr>
+      <th> ID </th>
+      <th> Tên dự án</th>
+      <th> Ngày start</th>
+      <th> Leader</th>
+      <th> Tiền</th>
+      <th class="text-center">Cập nhật</th>
+    </tr>
+    <tr *ngFor="let da of listDuAn">
+      <td> {{da.id}} </td>
+      <td routerLink="/chitietduan/{{da.id}}"> {{da.tenDuAn|uppercase}}</td>
+      <td> {{da.ngayStart| date:'dd/MM/y'}}</td>
+      <td>{{getLeader(da.leader)}}</td>
+      <td> {{(da.tien).toLocaleString('vi-VN', { style: 'currency', currency: 'VND' })}}</td>
+      <td class="box-edit">
+        <a class="edit" href="#" routerLink="/duan/sua/{{da.id}}">Sửa </a>
+        <a class="delete" href="#" [attr.data-bs-target]="'#exampleModal-' + da.id" data-bs-toggle="modal" data-bs-target="#exampleModal">Xóa</a>
+        <div class="modal fade" [attr.id]="'exampleModal-' + da.id" tabindex="-1" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">Thông báo</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <p>Bạn có chắc muốn xóa không?</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary" (click)="xoaDuAn(da.id)">Xóa</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </td>
+    </tr>
+</table>
