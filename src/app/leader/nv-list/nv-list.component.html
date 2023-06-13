@@ -1,0 +1,66 @@
+<table class="table table-bordered border">
+  <caption align="top" class="bg-warning p-2">
+    DANH SÁCH NHÂN VIÊN
+    <label for="" class="float-end">
+      <input type="text" [(ngModel)]="tukhoa" (keyup)="locNV()" />
+    </label>
+  </caption>
+  <tr>
+    <th class="text-center">ID</th>
+    <th>Họ tên</th>
+    <th>Ngày sinh</th>
+    <th>Phái</th>
+    <th>Khu vực</th>
+    <th>Chỉnh sửa</th>
+  </tr>
+  <tr *ngFor="let nv of listNhanVien">
+    <td class="text-center">{{ nv.id }}</td>
+    <td>{{ nv.ho }} {{ nv.ten }}</td>
+    <td>{{ nv.ngaysinh | date : "dd/MM/y" }}</td>
+    <td>{{ nv.phai == true ? "Nam" : "Nữ" }}</td>
+    <td>{{ nv.khuvuc }}</td>
+    <td class="box-edit">
+      <a class="edit" href="#" routerLink="/leader/nhanvien/sua/{{nv.id}}">Sửa</a>
+      <a class="delete" href="#" data-bs-toggle="modal" [attr.data-bs-target]="'#exampleModal-' + nv.id" data-bs-target="#exampleModal">Xóa</a>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+        style="background-color: unset;"
+        [attr.id]="'exampleModal-' + nv.id"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel">
+                Thông báo
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">Bạn có chắc muốn xóa chứ</div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Đóng
+              </button>
+              <button type="button" class="btn btn-primary" (click)="xoaNV(nv.id)">
+                Xóa
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </td>
+  </tr>
+</table>
