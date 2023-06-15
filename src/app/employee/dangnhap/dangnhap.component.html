@@ -1,1 +1,13 @@
-<p>dangnhap works!</p>
+<!-- dang-nhap.component.html -->
+<form #frm1="ngForm" class="col-6 m-auto" (ngSubmit)="xyLyDN(frm1.value)">
+  <h4>THÀNH VIÊN ĐĂNG NHẬP</h4>
+  <p>
+    <label>Username</label>
+    <input name="username" ngModel class="form-control" type="text" />
+  </p>
+  <p>
+    <label>Password</label>
+    <input name="password" ngModel class="form-control" type="password" />
+  </p>
+  <p><button type="submit" class="btn btn-success">Đăng nhập</button></p>
+</form>

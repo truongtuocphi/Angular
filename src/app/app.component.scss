@@ -33,3 +33,16 @@ nav {
         }
     }
 }
+
+.box-login {
+    &-btnLogin {
+        button {
+            background-color: rgb(64, 64, 247);
+            color: white;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            padding: 5px 10px;
+        }
+    }
+}

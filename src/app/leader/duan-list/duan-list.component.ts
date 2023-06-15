@@ -52,9 +52,11 @@ export class DuanListComponent {
   }
 
   getLeader(id:number) {
-    const leaderNV = this.listNhanVien.find((nv:any) => nv.id == id)
-    if(leaderNV) {
-      return leaderNV.ho + ' ' + leaderNV.ten;
+    if(id && Array.isArray(this.listNhanVien)) {
+      const leaderNV = this.listNhanVien.find((nv:any) => nv.id == id)
+      if(leaderNV) {
+        return leaderNV.ho + ' ' + leaderNV.ten;
+      }
     }
     return '';
   }

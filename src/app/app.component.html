@@ -3,7 +3,7 @@
     <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
-          <img src="../../assets/picture/logo.png" alt="">
+          <img src="../../assets/picture/logo.png" alt="" />
         </a>
         <button
           class="navbar-toggler"
@@ -19,7 +19,13 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#" (click)="ganCN('')">Quản lý dự án</a>
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                (click)="ganCN('')"
+                >Quản lý dự án</a
+              >
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#" routerLink="/leader">Trang chủ</a>
@@ -38,8 +44,19 @@
                 Dự án
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#" routerLink="/leader/duan/them">Thêm dự án</a></li>
-                <li><a class="dropdown-item" href="#" routerLink="/leader/duan">Danh sách dự án</a></li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    routerLink="/leader/duan/them"
+                    >Thêm dự án</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#" routerLink="/leader/duan"
+                    >Danh sách dự án</a
+                  >
+                </li>
                 <!-- <li><hr class="dropdown-divider" /></li>
                 <li><a class="dropdown-item" href="#">Quên mật khẩu</a></li> -->
               </ul>
@@ -55,8 +72,19 @@
                 Task
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#" routerLink="/leader/task/them">Thêm Task</a></li>
-                <li><a class="dropdown-item" href="#" routerLink="/leader/task">Danh sách Task</a></li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    routerLink="/leader/task/them"
+                    >Thêm Task</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#" routerLink="/leader/task"
+                    >Danh sách Task</a
+                  >
+                </li>
                 <!-- <li><hr class="dropdown-divider" /></li>
                 <li><a class="dropdown-item" href="#">Quên mật khẩu</a></li> -->
               </ul>
@@ -72,8 +100,22 @@
                 Nhân viên
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#" routerLink="/leader/nhanvien/them">Thêm nhân viên</a></li>
-                <li><a class="dropdown-item" href="#" routerLink="/leader/nhanvien">Danh sách nhân viên</a></li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    routerLink="/leader/nhanvien/them"
+                    >Thêm nhân viên</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="#"
+                    routerLink="/leader/nhanvien"
+                    >Danh sách nhân viên</a
+                  >
+                </li>
                 <!-- <li><hr class="dropdown-divider" /></li>
                 <li><a class="dropdown-item" href="#">Quên mật khẩu</a></li> -->
               </ul>
@@ -82,7 +124,7 @@
               <a class="nav-link disabled">Disabled</a>
             </li> -->
           </ul>
-          <form class="d-flex" role="search">
+          <!-- <form class="d-flex navbar-brand" role="search">
             <input
               class="form-control"
               type="search"
@@ -93,17 +135,29 @@
               [ngModelOptions]="{standalone: true}"
             />
             <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+          </form> -->
+        </div>
+        <div class="box-login">
+          <div *ngIf="idToken == '' || idToken == null">
+            <div class="box-login-btnLogin" routerLink="/employee/dangnhap">
+              <button>Đăng nhập</button>
+            </div>
+          </div>
+          <div *ngIf="idToken != null">
+            <div class="box-login-btnLogin" (click)="thoat()">
+              <button>Thoát</button>
+            </div>
+          </div>
         </div>
       </div>
     </nav>
   </nav>
-  <nav class="bg-light p-2">
+  <!-- <nav class="bg-light p-2">
     <ol class="breadcrumb m-0">
       <li class="breadcrumb-item active" aria-current="page">Home</li>
       <li class="breadcrumb-item" aria-current="page">Dự án</li>
     </ol>
-  </nav>
+  </nav> -->
   <main class="p-2" style="max-height: 100% !important">
     <!-- <aside class="col-md-3 bg-secondary" id="cottrai"></aside> -->
     <article class="" id="cotgiua">
@@ -111,5 +165,10 @@
     </article>
     <!-- <aside class="col-md-3 bg-secondary" id="cotphai"></aside> -->
   </main>
-  <footer class="bg-dark text0-white text-center" style="height: 45px; color: white;">Trương Tước Phi</footer>
+  <footer
+    class="bg-dark text0-white text-center"
+    style="height: 45px; color: white"
+  >
+    Trương Tước Phi
+  </footer>
 </div>

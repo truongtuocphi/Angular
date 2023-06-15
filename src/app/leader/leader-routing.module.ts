@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LeaderComponent } from './leader.component';
+import { baoveGuard } from '../employee/baove.guard';
 
 import { HomeComponent } from './home/home.component';
 import { DuanListComponent } from './duan-list/duan-list.component';
@@ -17,16 +18,16 @@ import { ChitietduanComponent } from './chitietduan/chitietduan.component';
 const routes: Routes = [
   { path: '', component: LeaderComponent },
   { path: '', component: HomeComponent },
-  { path: 'duan', component: DuanListComponent },
-  { path: 'chitietduan/:id', component:ChitietduanComponent },
-  { path: 'duan/them', component: DuanThemComponent },
-  { path: 'duan/sua/:id', component: DuanSuaComponent },
-  { path: 'nhanvien', component: NvListComponent },
-  { path: 'nhanvien/them', component: NvThemComponent },
-  { path: 'nhanvien/sua/:id', component: NvSuaComponent },
-  { path: 'task', component: TaskListComponent },
-  { path: 'task/them', component: TaskThemComponent },
-  { path: 'task/sua/:id', component: TaskSuaComponent },
+  { path: 'duan', component: DuanListComponent, canActivate: [baoveGuard] },
+  { path: 'chitietduan/:id', component:ChitietduanComponent, canActivate: [baoveGuard] },
+  { path: 'duan/them', component: DuanThemComponent, canActivate: [baoveGuard] },
+  { path: 'duan/sua/:id', component: DuanSuaComponent, canActivate: [baoveGuard] },
+  { path: 'nhanvien', component: NvListComponent, canActivate: [baoveGuard] },
+  { path: 'nhanvien/them', component: NvThemComponent, canActivate: [baoveGuard] },
+  { path: 'nhanvien/sua/:id', component: NvSuaComponent, canActivate: [baoveGuard] },
+  { path: 'task', component: TaskListComponent, canActivate: [baoveGuard] },
+  { path: 'task/them', component: TaskThemComponent, canActivate: [baoveGuard] },
+  { path: 'task/sua/:id', component: TaskSuaComponent, canActivate: [baoveGuard] },
 ];
 
 @NgModule({
